@@ -1,9 +1,5 @@
 const App = () => {
-  return(
-    <div>
-      <h1>This is an admin panel</h1>
-    </div>
-  );
+  return <div>yo</div>;
 };
 
 export default App;
