@@ -2,6 +2,7 @@
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Typography } from "@mui/material";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -17,8 +18,6 @@ import { styled, useTheme } from "@mui/material/styles";
 import * as React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import { SIDEBAR, SidebarType } from "../../../constants/sidebar";
-import { Typography } from "@mui/material";
-import { UserImg } from "../../../assets";
 
 const drawerWidth = 240;
 
