@@ -29,6 +29,10 @@ const get = async (
 
 const post = async (endpoint: Endpoint, payload: Payload, headers: Headers) => {
   try {
+    console.log(`POST Request to ${url}/api/${version}/${endpoint}`);
+    console.log("Headers:", headers);
+    console.log("Payload:", payload);
+
     const response = await axios.post(
       `${url}/api/${version}/${endpoint}`,
       payload,

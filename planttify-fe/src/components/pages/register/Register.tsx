@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { api } from "../../../utils/api";
+import axios from "axios";
 import { useAuth } from "../../../context/authContext/AuthContext";
 
 const Register: React.FC = () => {
@@ -19,22 +19,40 @@ const Register: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [gender, setGender] = useState<"male" | "female" | "other">("male");
+  const [phone, setPhone] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError(null);
+    setMessage(null);
+
     try {
-      const token = await api.auth.userRegister({
-        name,
-        email,
-        password,
-        gender,
-      });
-      login(token);
-      // Redirect or handle success as needed
-    } catch (error) {
-      console.error("Registration error:", error);
-      setError("Failed to register. Please try again later.");
+      const response = await axios.post(
+        "https://hack4bengal-427818.df.r.appspot.com/api/v1/auth/register",
+        {
+          name,
+          email,
+          password,
+          gender: gender.toUpperCase(),
+          phone,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          withCredentials: true,
+        }
+      );
+
+      setMessage(response.data.message);
+      setError(null);
+    } catch (error: any) {
+      console.error("Error:", error.response);
+      setMessage(null);
+      setError(error.response?.data?.message || "Registration failed");
     }
   };
 
@@ -97,6 +115,16 @@ const Register: React.FC = () => {
                 label="Other"
               />
             </RadioGroup>
+            <TextField
+              label="Phone"
+              type="tel"
+              variant="outlined"
+              fullWidth
+              required
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full"
+            />
             <Button
               type="submit"
               variant="contained"
@@ -113,6 +141,15 @@ const Register: React.FC = () => {
                 className="text-center mt-2"
               >
                 {error}
+              </Typography>
+            )}
+            {message && (
+              <Typography
+                variant="body2"
+                color="primary"
+                className="text-center mt-2"
+              >
+                {message}
               </Typography>
             )}
           </form>

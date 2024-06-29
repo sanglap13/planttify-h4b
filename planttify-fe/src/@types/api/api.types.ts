@@ -14,9 +14,7 @@ type AuthHeader = {
 
 export type Payload = any;
 
-export type Headers =
-  | {
-      Accept: string;
-      "Content-Type": string;
-    }
-  | AuthHeader;
+export type Headers = {
+  "Content-Type": string;
+  "Access-Control-Allow-Origin": string;
+};

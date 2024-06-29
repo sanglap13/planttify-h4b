@@ -7,16 +7,14 @@ const { post } = request;
 const initialRoute = "/auth";
 
 export const headers = {
-  Accept: "application/json",
   "Content-Type": "application/json",
+  "Access-Control-Allow-Origin": "*",
 };
 
 export const userRegister = async (payload: Payload) => {
   try {
     const endpoint = `${initialRoute}/register`;
-    const response = await post(endpoint, payload, {
-      ...headers,
-    });
+    const response = await post(endpoint, payload, headers);
     if (response) {
       const {
         data: { message },
@@ -31,7 +29,6 @@ export const userRegister = async (payload: Payload) => {
     throw new Error();
   } catch (error: unknown) {
     console.log(error);
-    alert("Registration failed");
     throw error;
   }
 };
