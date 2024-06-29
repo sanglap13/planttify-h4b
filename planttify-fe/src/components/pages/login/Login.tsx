@@ -56,6 +56,10 @@ const Login: React.FC = () => {
     navigate("/register");
   };
 
+  const handleAdminLoginRedirect = () => {
+    window.location.href = "http://localhost:5173/login";
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <Card className="w-full max-w-md p-8">
@@ -117,6 +121,14 @@ const Login: React.FC = () => {
               style={{ color: "#4caf50" }} // Primary color
             >
               Register New User
+            </Typography>
+            <Typography
+              variant="body2"
+              className="text-center mt-2 cursor-pointer"
+              onClick={handleAdminLoginRedirect}
+              style={{ color: "#4caf50" }} // Primary color
+            >
+              Admin Login
             </Typography>
           </form>
         </CardContent>
