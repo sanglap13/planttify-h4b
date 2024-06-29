@@ -29,6 +29,10 @@ const navItems = [
     redirect: "/",
   },
   {
+    name: "Service",
+    redirect: "/service",
+  },
+  {
     name: "Groups",
     redirect: "/groups",
   },
@@ -52,7 +56,7 @@ const Navbar = (props: Props) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Planttify
+        Planttify 🌿
       </Typography>
       <Divider />
       <List>
@@ -93,7 +97,7 @@ const Navbar = (props: Props) => {
               sx={{ color: "#000", display: { xs: "none", sm: "block" } }}
               className="cursor-pointer font-bold"
             >
-              Planttify
+              Planttify 🌿
             </Typography>
           </Box>
           <Box

@@ -3,14 +3,14 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className=" via-[#bce1ff] to-gray-100">
+      <footer className="bg-gray-900">
         <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
-              <p className="max-w-xs mt-4 text-sm text-gray-600">
+              <p className="max-w-xs mt-4 text-sm text-gray-200">
                 Join the Green Revolution with us in the generation of Tech AI.
               </p>
-              <div className="flex mt-8 space-x-6 text-gray-600">
+              <div className="flex mt-8 space-x-6 text-gray-100">
                 <a
                   className="hover:opacity-75"
                   href=""
@@ -109,7 +109,7 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 text-white text-bold gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
               <div>
                 <p className="font-medium">Company</p>
                 <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
@@ -173,7 +173,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <p className="mt-8 text-xs text-gray-800">© 2024 Planttify</p>
+          <p className="mt-8 text-xs text-gray-300">© 2024 Planttify</p>
         </div>
       </footer>
     </div>

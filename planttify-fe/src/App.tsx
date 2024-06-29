@@ -6,6 +6,7 @@ import Groups from "./components/pages/groups/Groups";
 import Home from "./components/pages/home/Home";
 import Login from "./components/pages/login/Login";
 import Register from "./components/pages/register/Register";
+import Service from "./components/pages/service/Service";
 
 const theme = createTheme({
   palette: {
@@ -24,6 +25,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/groups" element={<Groups />} />
+          <Route path="service" element={<Service />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="*" element={<div>404 | Not Found</div>} />

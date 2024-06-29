@@ -39,7 +39,7 @@ const Hero = () => {
         <p className="text-lg md:text-xl mb-8">
           Trees are poems that the earth writes upon the sky.
         </p>
-        <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+        <button className="bg-green-600 shodow-md hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
           Join Groups
         </button>
       </div>
