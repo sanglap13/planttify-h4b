@@ -137,13 +137,15 @@ const GlobalMap: React.FC<GlobalMapProps> = ({ location }) => {
         </APIProvider>
       </div>
       {/* sub location container */}
-      <div className='subLocationDivStyle'>
-        <h3>Heat ️‍🔥 Areas for Plantation</h3>
+      <div className='text-black'>
+        <div className='bg-green-100'>
+        <h3 className='text-xl font-bold text-center p-2'>Heat ️‍🔥 Areas for Plantation</h3>
+        </div>
         <hr />
-        <div>
+        <div className='mt-4'>
           {subLocalities.length > 0 ? (
             <div style={{textAlign:"left", paddingLeft:"20px"}}>
-              <h4>Showing Results for location: {location.toUpperCase()}</h4>
+              <h4 className='py-2'>Showing Results for location: {location.toUpperCase()}</h4>
               {hotSubLocations.length > 0 ? (
                 hotSubLocations.map(({ subLocation, weather }, index) => (
                   <p key={index}><b>{subLocation}</b>: {weather.main.temp}°C ️‍🔥</p>

@@ -24,17 +24,17 @@ const HeatContainer: React.FC = () => {
 
   return (
     <>
-      <div className='bg-gray-100 p-2 round-4'>
+      <div className='bg-gray-50 p-2 rounded-sm'>
         {/* location input div */}
         <div style={{ display: "flex", gap: "5px", padding:"10px 0px 0px 10px"}} className='inputDivStyle'>
-          <input className='inputFieldStyle'
+          <input className='inputFieldStyle text-black'
             type="text"
             placeholder="Search a location"
             value={inputValue}
             onChange={handleInputChange}
             onKeyPress={handleKeyPress}
           />
-          <button type="button" className='searchBtnStyle' onClick={handleButtonClick}>Search</button>
+          <button type="button" className='p-2 px-3 rounded-md bg-green-600 shadow-lg' onClick={handleButtonClick}>Search</button>
         </div>
         {/* map div */}
         <GlobalMap location={location}/>
