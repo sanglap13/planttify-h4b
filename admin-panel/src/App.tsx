@@ -4,6 +4,7 @@ import Home from "./components/pages/home/Home";
 import User from "./components/pages/user/User";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./components/layout/theme";
+import Group from "./components/pages/group/Group";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/user" element={<User />} />
+            <Route path="/group" element={<Group />} />
             <Route path="*" element={<div>Not Found</div>} />
           </Routes>
         </MainLayout>

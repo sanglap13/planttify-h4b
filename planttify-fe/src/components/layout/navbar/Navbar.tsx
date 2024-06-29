@@ -104,7 +104,9 @@ const Navbar = (props: Props) => {
               </Link>
             ))}
           </Box>
-          <Button sx={{ color: "#000" }}>Login</Button>
+          <Link to="/login">
+            <Button sx={{ color: "#000" }}>Login</Button>
+          </Link>
         </Toolbar>
       </AppBar>
       <nav>

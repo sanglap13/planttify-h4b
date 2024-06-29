@@ -4,6 +4,8 @@ import Home from "./components/pages/home/Home";
 import Navbar from "./components/layout/navbar/Navbar";
 import Footer from "./components/layout/footer/Footer";
 import Groups from "./components/pages/groups/Groups";
+import Login from "./components/pages/login/Login";
+import Register from "./components/pages/register/Register";
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/groups" element={<Groups />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route path="*" element={<div>404 | Not Found</div>} />
       </Routes>
       <Footer />
