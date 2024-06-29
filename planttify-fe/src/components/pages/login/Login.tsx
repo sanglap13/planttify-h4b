@@ -44,6 +44,7 @@ const Login: React.FC = () => {
       // Extract accessToken from the response
       const accessToken = response.data.data.data.accessToken;
       login(accessToken);
+      navigate("/"); // Redirect to home page
     } catch (error: any) {
       console.error("Error:", error.response);
       setMessage(null);

@@ -15,7 +15,8 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/authContext/AuthContext";
 
 interface Props {
   window?: () => Window;
@@ -27,7 +28,6 @@ const navItems = [
     name: "Home",
     redirect: "/",
   },
-
   {
     name: "Groups",
     redirect: "/groups",
@@ -36,10 +36,17 @@ const navItems = [
 
 const Navbar = (props: Props) => {
   const { window } = props;
+  const { token, logout } = useAuth();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
   };
 
   const drawer = (
@@ -50,8 +57,8 @@ const Navbar = (props: Props) => {
       <Divider />
       <List>
         {navItems.map((item, index) => (
-          <Link to={item.redirect}>
-            <ListItem key={index} disablePadding>
+          <Link to={item.redirect} key={index}>
+            <ListItem disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText primary={item.name} />
               </ListItemButton>
@@ -97,16 +104,20 @@ const Navbar = (props: Props) => {
             }}
           >
             {navItems.map((item) => (
-              <Link to={item.redirect}>
-                <Button key={item.name} sx={{ color: "#000" }}>
-                  {item.name}
-                </Button>
+              <Link to={item.redirect} key={item.name}>
+                <Button sx={{ color: "#000" }}>{item.name}</Button>
               </Link>
             ))}
           </Box>
-          <Link to="/login">
-            <Button sx={{ color: "#000" }}>Login</Button>
-          </Link>
+          {token ? (
+            <Button onClick={handleLogout} sx={{ color: "#000" }}>
+              Logout
+            </Button>
+          ) : (
+            <Link to="/login">
+              <Button sx={{ color: "#000" }}>Login</Button>
+            </Link>
+          )}
         </Toolbar>
       </AppBar>
       <nav>
