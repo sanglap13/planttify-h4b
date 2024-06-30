@@ -1,3 +1,3 @@
-# Plantify 🌿 (Web Application)
+# Planttify 🌿 (Web Application)
 
 
