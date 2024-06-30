@@ -8,6 +8,7 @@ Planttify is designed to assist both administrators and users in managing planta
 
 - **CRM Frontend:** A robust tool for managing customer relationships, tracking interactions, and organizing plantation-related data.
 - **Client-side Application:** A user-friendly interface where clients can identify suitable plantation zones based on heat zone detection.
+- **Backend:** Built using Spring Boot, the backend handles all the business logic and data management. It provides RESTful APIs for the frontend applications to interact with. The backend is responsible for user authentication, data processing, and integration with the machine learning model for temperature prediction.
 
 ## Features
 
