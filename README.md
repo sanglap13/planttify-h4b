@@ -47,7 +47,6 @@ Planttify is designed to assist both administrators and users in managing planta
 1. Clone the repository:
     
     ```bash
-    bashCopy code
     git clone https://github.com/your-username/planttify.git
     cd planttify/frontend
     
@@ -56,7 +55,6 @@ Planttify is designed to assist both administrators and users in managing planta
 2. Install dependencies:
     
     ```bash
-    bashCopy code
     npm install
     
     ```
@@ -64,7 +62,6 @@ Planttify is designed to assist both administrators and users in managing planta
 3. Start the development server:
     
     ```bash
-    bashCopy code
     npm start
     
     ```
@@ -76,7 +73,6 @@ Planttify is designed to assist both administrators and users in managing planta
 1. Navigate to the backend directory:
     
     ```bash
-    bashCopy code
     cd ../backend
     
     ```
@@ -84,7 +80,6 @@ Planttify is designed to assist both administrators and users in managing planta
 2. Build the project using Maven:
     
     ```bash
-    bashCopy code
     mvn clean install
     
     ```
@@ -92,7 +87,6 @@ Planttify is designed to assist both administrators and users in managing planta
 3. Run the Spring Boot application:
     
     ```bash
-    bashCopy code
     mvn spring-boot:run
     
     ```
