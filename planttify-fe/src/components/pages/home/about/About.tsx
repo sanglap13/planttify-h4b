@@ -3,7 +3,7 @@ const About = () => {
   return (
     <div>
       <div className="md:my-32 px-10">
-            <h1 className="text-center text-5xl font-bold font-satisfy my-6">Our Vision</h1>
+            <h1 className="text-center text-4xl font-bold font-satisfy my-6">Our Vision</h1>
             <p className="w-4/5 mx-auto mb-10 text-center">At Planttify, we envision a world where technology and agriculture work hand in hand to create sustainable and productive farming practices. Our goal is to provide innovative solutions that empower farmers and gardeners to make data-driven decisions.</p>
             <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <div>

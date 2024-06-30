@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { HeroIMG } from "../../../../assets";
 import About from "../about/About";
+import ImageGallery from "../../../image/ImageGallery";
 
 const textOptions = ["Trees", "Earth"];
 
@@ -47,6 +48,10 @@ const Hero = () => {
       </div>
     </div>
     <About/>
+    <div className="md:my-40 px-10">
+        <h1 className="text-center text-3xl md:text-4xl font-bold font-satisfy my-10">Green Harmony On Earth</h1>
+        <ImageGallery/>
+    </div>
     </>
   );
 };
