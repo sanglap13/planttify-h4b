@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from '@vis.gl/react-google-maps';
 import map from './westbengalMap';
 
-
 interface WeatherData {
   subLocation: string;
   weather: any; // Replace 'any' with a more specific type for weather data if available
@@ -51,7 +50,7 @@ const GlobalMap: React.FC<GlobalMapProps> = ({ location }) => {
               console.log('Sub-localities:', subLocs);
 
               // Fetch weather data for sub-localities using coordinates
-              const weatherPromises = subLocs.map(async (subLocation:any) => {
+              const weatherPromises = subLocs.map(async (subLocation: any) => {
                 try {
                   const subLocationCoords = map[subLocation.toLowerCase()];
                   let lat, lng;
@@ -85,9 +84,15 @@ const GlobalMap: React.FC<GlobalMapProps> = ({ location }) => {
               setWeatherData(weatherResults);
               console.log('Weather data:', weatherResults);
             } else {
+              setSubLocalities([]);
+              setWeatherData([]);
               console.log('No sub-localities found for the location');
             }
           } else {
+            setPosition({ lat: 22.5726, lng: 88.3639 });
+            setMainLocationWeather(null);
+            setSubLocalities([]);
+            setWeatherData([]);
             console.log('No results found for the location');
           }
         } catch (error) {
@@ -139,27 +144,27 @@ const GlobalMap: React.FC<GlobalMapProps> = ({ location }) => {
       {/* sub location container */}
       <div className='text-black'>
         <div className='bg-green-100'>
-        <h3 className='text-xl font-bold text-center p-2'>Heat ️‍🔥 Areas for Plantation</h3>
+          <h3 className='text-xl font-bold text-center p-2'>Heat ️‍🔥 Areas for Plantation</h3>
         </div>
         <hr />
-        <div className='mt-4'>
+        <div className='mt-4 p-2'>
           {subLocalities.length > 0 ? (
-            <div style={{textAlign:"left", paddingLeft:"20px"}}>
-              <h4 className='py-2'>Showing Results for location: {location.toUpperCase()}</h4>
+            <div style={{ textAlign: "left", paddingLeft: "20px" }}>
+              <h4 className='p-2 mb-3'>Showing Results for location: <b>{location.toUpperCase()}</b></h4>
               {hotSubLocations.length > 0 ? (
                 hotSubLocations.map(({ subLocation, weather }, index) => (
                   <p key={index}><b>{subLocation}</b>: {weather.main.temp}°C ️‍🔥</p>
                 ))
               ) : isMainLocationHot ? (
-                <p>{location}: {mainLocationWeather.main.temp}°C</p>
+                <p>{location}: {mainLocationWeather.main.temp}°C ️‍🔥</p>
               ) : (
                 <p>No sub-locations have crossed the temperature threshold of 30°C.</p>
               )}
             </div>
           ) : isMainLocationHot ? (
-            <div>
-              <h4>Showing Results for location: {location}</h4>
-              <p>{location}: {mainLocationWeather.main.temp}°C</p>
+            <div className='p-2'>
+              <h4 className='mb-3'>Showing Results for location: <b>{location.toUpperCase()}</b></h4>
+              <p><b>{location}</b>: {mainLocationWeather.main.temp}°C ️‍🔥</p>
             </div>
           ) : (
             <p>No sub-localities found.</p>
