@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { HeroIMG } from "../../../../assets";
+import About from "../about/About";
 
 const textOptions = ["Trees", "Earth"];
 
@@ -20,6 +21,7 @@ const Hero = () => {
   }, [currentIndex]);
 
   return (
+    <>
     <div
       className="relative w-full h-[40rem] px-10 overflow-hidden flex items-center bg-cover bg-center"
       style={{ backgroundImage: `url(${HeroIMG})` }}
@@ -44,6 +46,8 @@ const Hero = () => {
         </button>
       </div>
     </div>
+    <About/>
+    </>
   );
 };
 
